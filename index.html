@@ -33,44 +33,49 @@
 
 <body>
     <script>
-    function setCookie(name, value, days) {
-        var expires = "";
-        if (days) {
-            var date = new Date();
-            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-            expires = "; expires=" + date.toUTCString();
-        }
-        document.cookie = name + "=" + (value || "") + expires + "; path=/";
+function setCookie(name, value, days) {
+    var expires = "";
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
     }
+    document.cookie = name + "=" + (value || "") + expires + "; path=/";
+}
 
-    function getCookie(name) {
-        var nameEQ = name + "=";
-        var ca = document.cookie.split(';');
-        for (var i = 0; i < ca.length; i++) {
-            var c = ca[i];
-            while (c.charAt(0) == ' ') c = c.substring(1, c.length);
-            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
-        }
-        return null;
+function getCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
     }
+    return null;
+}
 
-    document.addEventListener("DOMContentLoaded", function () {
-        var cookieBanner = document.getElementById("cookie-banner");
-        var cookieAccept = document.getElementById("cookie-accept");
+function showCookiesBanner() {
+    var cookiesBanner = document.getElementById("cookies-banner");
+    if (!getCookie("cookies_accepted")) {
+        cookiesBanner.style.display = "block";
+    } else {
+        cookiesBanner.style.display = "none";
+    }
+}
 
-        if (!getCookie("cookies_accepted")) {
-            cookieBanner.style.display = "block";
-        }
+function acceptCookies() {
+    setCookie("cookies_accepted", "true", 365);
+    showCookiesBanner();
+}
 
-        cookieAccept.addEventListener("click", function () {
-            setCookie("cookies_accepted", "true", 365);
-            cookieBanner.style.display = "none";
-        });
-    });
+document.getElementById("accept-cookies-btn").addEventListener("click", acceptCookies);
+showCookiesBanner();
 </script>
-<div id="cookie-banner" style="position: fixed; bottom: 0; left: 0; width: 100%; background-color: #f8f8f8; padding: 10px; box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);">
-    <p style="margin: 0;">This website uses cookies to ensure you get the best experience on our website. <a href="#" id="cookie-accept">Accept</a></p>
+
+<div id="cookies-banner" style="position: fixed; bottom: 0; left: 0; right: 0; background-color: #f0f0f0; padding: 10px; text-align: center; z-index: 9999;">
+    <p>This website uses cookies to ensure you get the best experience on our website. By using this site, you agree to our use of cookies. <button id="accept-cookies-btn">Accept</button></p>
 </div>
+
 
     <div id="app">
         <div class="_452c3ec4 d68c66a8">
