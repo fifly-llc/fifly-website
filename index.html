@@ -32,6 +32,46 @@
 </head>
 
 <body>
+    <script>
+    function setCookie(name, value, days) {
+        var expires = "";
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + (value || "") + expires + "; path=/";
+    }
+
+    function getCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        var cookieBanner = document.getElementById("cookie-banner");
+        var cookieAccept = document.getElementById("cookie-accept");
+
+        if (!getCookie("cookies_accepted")) {
+            cookieBanner.style.display = "block";
+        }
+
+        cookieAccept.addEventListener("click", function () {
+            setCookie("cookies_accepted", "true", 365);
+            cookieBanner.style.display = "none";
+        });
+    });
+</script>
+<div id="cookie-banner" style="position: fixed; bottom: 0; left: 0; width: 100%; background-color: #f8f8f8; padding: 10px; box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);">
+    <p style="margin: 0;">This website uses cookies to ensure you get the best experience on our website. <a href="#" id="cookie-accept">Accept</a></p>
+</div>
+
     <div id="app">
         <div class="_452c3ec4 d68c66a8">
             <div class="cf325dbd list ma0 pa0 tr z-999">
