@@ -1,92 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login V1</title>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="images/icons/logo.png"/>
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="css/util.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-<!--===============================================================================================-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Login | FiFly</title>
+	<style>
+		/* Styles for the background image */
+		body {
+			margin: 0;
+			padding: 0;
+			font-family: "Helvetica Neue", Arial, sans-serif;
+			background: url('https://picsum.photos/3840/2160') no-repeat center center fixed;
+			background-size: cover;
+			height: 100vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		/* Styles for the login container */
+		.login-container {
+			background-color: rgba(255, 255, 255, 0.8);
+			padding: 20px;
+			border-radius: 5px;
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+			text-align: center;
+			width: 300px;
+		}
+
+		/* Styles for the input fields and button */
+		.login-container input {
+			width: 100%;
+			padding: 10px;
+			margin: 10px 0;
+			border: 1px solid #ccc;
+			border-radius: 3px;
+		}
+
+		.login-container button {
+			width: 100%;
+			padding: 10px;
+			background-color: #007bff;
+			color: #fff;
+			border: none;
+			border-radius: 3px;
+			cursor: pointer;
+		}
+
+		.login-container button:hover {
+			background-color: #0056b3;
+		}
+
+		/* Styles for the forgot password link */
+		.forgot-password {
+			margin-top: 10px;
+			text-decoration: none;
+			color: #007bff;
+			font-size: 14px;
+		}
+
+		.forgot-password:hover {
+			text-decoration: underline;
+		}
+	</style>
 </head>
+
 <body>
-	
-	<div class="limiter">
-		<div class="container-login100">
-			<div class="wrap-login100">
-				<div class="login100-pic js-tilt" data-tilt>
-					<img src="images/img-01.png" alt="IMG">
-				</div>
-
-				<form class="login100-form validate-form">
-					<span class="login100-form-title">
-						FiFly Login
-					</span>
-
-					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="email" placeholder="Email">
-						<span class="focus-input100"></span>
-						<span class="symbol-input100">
-							<i class="fa fa-envelope" aria-hidden="true"></i>
-						</span>
-					</div>
-
-					<div class="wrap-input100 validate-input" data-validate = "Password is required">
-						<input class="input100" type="password" name="pass" placeholder="Password">
-						<span class="focus-input100"></span>
-						<span class="symbol-input100">
-							<i class="fa fa-lock" aria-hidden="true"></i>
-						</span>
-					</div>
-					
-					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
-							Login
-						</button>
-					</div>
-
-					<div class="text-center p-t-136">
-						<a class="txt2" href="../onboarding/">
-							Create your Account
-							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
-						</a>
-					</div>
-				</form>
-			</div>
-		</div>
+	<div class="login-container">
+		<h2 id="title"></h2>
+		<form action="continueOn()" method="POST">
+			<input type="email" name="email" id="email" placeholder="email@here.io" required>
+			<input type="password" name="password" id="password" placeholder="Pa$$w0rd here" required>
+			<button type="submit">Let me in</button>
+		</form>
+		<a class="forgot-password" href="/forgotpass">Forgot Password?</a>
 	</div>
-	
-	
 
-	
-<!--===============================================================================================-->	
-	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/bootstrap/js/popper.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/select2/select2.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/tilt/tilt.jquery.min.js"></script>
-	<script >
-		$('.js-tilt').tilt({
-			scale: 1.1
-		})
+	<script>
+		const currentDate = new Date();
+		const currentHour = currentDate.getHours();
+
+		if (currentHour >= 0 && currentHour < 12) {
+			document.getElementById('title').innerText = "Good Morning";
+		} else {
+			document.getElementById('title').innerText = "Good Afternoon";
+		}
+
+		function continueOn() {
+			let email = document.getElementById('email').value;
+			let password = document.getElementById('password').value;
+
+			const fetchData = {
+				method: 'POST',
+				headers: [],
+				body: JSON.stringify({
+					email: email,
+					password: password
+				})
+			};
+
+			fetch('https://accounts.fifly.org/api/login', fetchData).then(res => res.json()).then(json => {
+				if (json.status === 'success') {
+					window.cookie += "[token:" + json.token + "]";
+				} else {
+					if (json.message === '401-unauthorised') {
+						window.location.href = "/login-noauth";
+					}
+				}
+			});
+		}
 	</script>
-<!--===============================================================================================-->
-	<script src="js/main.js"></script>
-
 </body>
+
 </html>

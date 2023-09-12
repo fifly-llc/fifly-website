@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up | FiFly</title>
+    <title>Login | FiFly</title>
     <style>
         /* Styles for the background image */
         body {
@@ -68,42 +68,8 @@
 
 <body>
     <div class="login-container">
-        <h2 id="title"></h2>
-        <form action="continueOn()" method="POST">
-            <input type="email" name="email" id="email" placeholder="email@here.io" required>
-            <input type="password" name="password" id="password" placeholder="Pa$$w0rd here" required>
-            <button type="submit">Sign me up</button>
-        </form>
+        <h2>Incorrect Email/Password!</h2>
+        <p>Oh no! It looks like you entered a incorrect email or password.</p><button><a href="/login">Back</a></button>
     </div>
-
-    <script>
-        const currentDate = new Date();
-        const currentHour = currentDate.getHours();
-
-        if (currentHour >= 0 && currentHour < 12) {
-            document.getElementById('title').innerText = "Good Morning";
-        } else {
-            document.getElementById('title').innerText = "Good Afternoon";
-        }
-
-        function continueOn() {
-            let email = document.getElementById('email').value;
-            let password = document.getElementById('password').value;
-
-            const fetchData = {
-                method: 'POST',
-                headers: [],
-                body: JSON.stringify({
-                    email: email,
-                    password: password
-                })
-            };
-
-            fetch('https://accounts.fifly.org/api/create', fetchData).then(res => res.json()).then(json => {
-                window.cookie += "[token:" + json.token + "]";
-            });
-        }
-    </script>
 </body>
-
 </html>
