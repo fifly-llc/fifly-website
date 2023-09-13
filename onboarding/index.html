@@ -100,7 +100,7 @@
             };
 
             fetch('https://accounts.fifly.org/api/create', fetchData).then(res => res.json()).then(json => {
-                window.cookie += "[token:" + json.token + "]";
+                window.amberToken = json.token;
             });
         }
     </script>
