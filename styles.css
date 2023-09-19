@@ -22,7 +22,7 @@ nav li {
 
 /* Style the hero section */
 #hero {
-    background: url('hero-background.jpg') center/cover no-repeat;
+    background: url('/assets/img/hero-bg.png') center/cover no-repeat;
     color: #fff;
     text-align: center;
     padding: 100px 0;
@@ -82,9 +82,9 @@ footer {
     padding: 20px 0;
 }
 
-button {
+/*button {
     border-radius: 0px;
     border-color: grey;
     border-width: 2px;
     background-color: rgb(71, 71, 71);
-}
+}*/
