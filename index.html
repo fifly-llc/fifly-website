@@ -4,65 +4,54 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lyyter Technologies</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FiFly</title>
     <link href="styles.css" rel="stylesheet">
 </head>
 
 <body>
     <script src="scripts.js"></script>
 
-    <nav>
-        <div class="logo">
-            <img src="assets/img/logo.png" alt="Lyyter Technologies Logo" />
-        </div>
-        <ul>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#about">About Us</a></li>
-            <button>
-                <a href="/login" class="login-button">Login</a>
-            </button>
-            <button>
-                <a href="/onboarding/" class="signup-button">Get Started</a>
-            </button>
-        </ul>
-    </nav>
+    <div class="container main-container">
+        <div class="container header-container">
+            <header>
+                <div class="container logo-container">
+                    <div class="logo">
+                        <img src="https://fifly.org/assets/img/logo.png" alt="FiFly Logo">
+                    </div>
+                </div>
 
-    <header id="hero">
-        <div class="hero-content">
-            <h1>Lyyting the future</h1>
-            <div class="buttons">
-                <button><a href="/login" class="login-button">Login</a></button>
-                <button>
-                    <a href="/onboarding/" class="signup-button">Get Started</a>
-                </button>
+                <div class="container navbar-container">
+                    <div class="navbar">
+                        <nav>
+                            <a href="https://fifly.org/products/">Products</a>
+                            <a href="https://docs.fifly.org/">Docs</a>
+
+                            <div class="container loginsignup-container">
+                                <button><a href="https://fifly.org/login/">Login</a></button>
+                                <button><a href="https://fifly.org/onboarding/">Get Started</a></button>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+        </div>
+
+        <div class="container body-container">
+            <div class="bg"></div>
+
+            <div class="container content-container">
+                <div class="container hero-container">
+                    <div class="hero">
+                        <h1><icon name="alien-invader"></icon>Level Up your Coding Skills<icon name="arcade-icon"></icon></h1>
+                        <p>We're FiFly, behind Pixell, Silicon, Weaver Engine, Boxed, the BXED family of models, and more.</p>
+                        <h2>What we've got</h2>
+                        <p>Check out our products <a href="https://fifly.org/products/">here</a>. Also (before you leave) check out our GitHub <a href="https://github.com/fifly-llc">here</a>.</p>
+                    </div>
+                </div>
             </div>
         </div>
-    </header>
-
-    <section id="features">
-        <div class="feature">
-            <h2>Get a server or website online in minutes with Pixell</h2>
-            <p>We provide free servers with Pixell (currently only Node.js)</p>
-        </div>
-        <div class="feature">
-            <h2>Develop online multiplayer/singleplayer games with Weaver Engine</h2>
-            <p>Create amazing online games with Weaver Engine and host it with Pixell</p>
-        </div>
-    </section>
-
-    <section id="about">
-        <div class="about-content">
-            <h2>About Us</h2>
-            <p>We are Lyyter Technologies, a company devoted to providing outstanding products to our customers (thats you!).</p>
-            <b><i>Hayden Oakley, Founder & CEO</i></b>
-        </div>
-    </section>
-
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2023 fifly.org. All rights reserved. This website has no license, making it all rights reserved. Some Lyyter Technologies products are licensed under the <a href="/FRSL/1.0/">FRSL</a> or other licenses.</p>
-        </div>
-    </footer>
+    </div>
 </body>
 
 </html>

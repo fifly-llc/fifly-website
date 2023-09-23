@@ -1,0 +1,68 @@
+@font-face {
+    font-family: 'Manrope';
+    src: url('/assets/fonts/manrope.ttf') format('truetype');
+}
+
+body, h1, h2, p {
+    font-family: 'Manrope', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: white;
+    color: rgb(120, 120, 120);
+    padding: 20px;
+    border: 2px solid rgb(145, 145, 145);
+}
+
+a {
+    text-decoration: none;
+}
+
+.hero {
+    background: url('/assets/img/hero-bg.png') center/cover no-repeat;
+    color: rgb(142, 142, 142);
+    text-align: center;
+    padding: 100px 0;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+button {
+    background-color: rgb(98, 98, 98);
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    text-decoration: none;
+    font-size: 18px;
+    margin: 0 10px;
+}
+
+button:hover {
+    background-color: rgb(77, 77, 77);
+}
+
+footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+icon[name="alien-invader"] {
+    background-image: url('https://fifly.org/assets/img/alien-invader.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 80px;
+    height: 80px;
+    display: inline-block;
+}
