@@ -144,7 +144,8 @@ button,
 html [type="button"],
 [type="reset"],
 [type="submit"] {
-    -webkit-appearance: button
+    -webkit-appearance: button;
+    appearance: button;
 }
 
 button::-moz-focus-inner,
@@ -197,6 +198,7 @@ textarea {
 
 [type="search"] {
     -webkit-appearance: textfield;
+    appearance: textfield;
     outline-offset: -2px
 }
 
@@ -1179,6 +1181,7 @@ label {
 .input {
     -moz-appearance: none;
     -webkit-appearance: none;
+    appearance: none;
     font-size: 16px;
     letter-spacing: -0.1px;
     line-height: 20px;
