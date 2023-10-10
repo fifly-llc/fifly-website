@@ -1,73 +1,196 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>FiFly</title>
-    <link href="styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Heebo:400,700|IBM+Plex+Sans:600" rel="stylesheet">
+    <link rel="stylesheet" href="dist/css/style.css">
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
 </head>
 
-<body>
-    <script src="scripts.js"></script>
-
-    <div class="container main-container">
-        <div class="container header-container">
-            <header>
-                <div class="container logo-container">
-                    <div class="logo">
-                        <img src="https://fifly.org/assets/img/logo.png" alt="FiFly Logo">
-                    </div>
-                </div>
-
-                <div class="container navbar-container">
-                    <div class="navbar">
-                        <nav>
-                            <a href="https://fifly.org/products/">Products</a>
-                            <a href="https://docs.fifly.org/">Docs</a>
-                        </nav>
-
-                        <div class="container loginsignup-container">
-                            <a href="https://fifly.org/login/">Login</a>
-                            <a href="https://fifly.org/onboarding/">Get Started</a>
-                        </div>
-                    </div>
-                </div>
-            </header>
-        </div>
-
-        <div class="container body-container">
-            <div class="bg">
-                <div class="container content-container">
-                    <div class="container hero-container">
-                        <div class="hero">
-                            <h1>Level Up your Coding Skills</h1>
-                            <p>We're FiFly, behind Pixell, Silicon, Weaver Engine, Boxed, the BXED family of models, and more.</p>
-                            <p>Check out our products <a href="https://fifly.org/products/">here</a>. Also (before you leave) check out
-                                our GitHub <a href="https://github.com/fifly-llc">here</a>.</p>
-                        </div>
+<body class="is-boxed has-animations">
+    <div class="body-wrap boxed-container">
+        <header class="site-header">
+            <div class="container">
+                <div class="site-header-inner">
+                    <div class="brand header-brand">
+                        <h1 class="m-0">
+                            <a href="#">
+                                <img class="header-logo-image asset-light" src="dist/images/logo-light.svg" alt="Logo">
+                                <img class="header-logo-image asset-dark" src="dist/images/logo-dark.svg" alt="Logo">
+                            </a>
+                        </h1>
                     </div>
                 </div>
             </div>
-        </div>
+        </header>
 
-        <div class="container header-container">
-            <header>
-                <div class="container navbar-container">
-                    <div class="navbar">
-                        <nav>
-                            <a href="https://fifly.org/products/">Products</a>
-                            <a href="https://docs.fifly.org/">Docs</a>
-                            <a href="https://terms.fifly.org/privacy/">Privacy Policy</a>
-                            <a href="https://terms.fifly.org/terms/">Terms of Service</a>
-                            <a href="https://docs.fifly.org/">Community</a>
-                        </nav>
+        <main>
+            <section class="hero">
+                <div class="container">
+                    <div class="hero-inner">
+                        <div class="hero-copy">
+                            <h1 class="hero-title mt-0">FiFly</h1>
+                            <p class="hero-paragraph">We're FiFly, behind Pixell, Snowpackr (snow), the snow Registry,
+                                Weaver Engine, Boxed, the BXED family of models, and more.</p>
+                            <div class="hero-cta">
+                                <a class="button button-primary" href="#about">About Us</a>
+                                <div class="lights-toggle">
+                                    <input id="lights-toggle" type="checkbox" name="lights-toggle" class="switch"
+                                        checked="checked">
+                                    <label for="lights-toggle" class="text-xs"><span>Turn me <span
+                                                class="label-text">dark</span></span></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hero-media">
+                            <div class="header-illustration">
+                                <img class="header-illustration-image asset-light"
+                                    src="dist/images/header-illustration-light.svg" alt="Header illustration">
+                                <img class="header-illustration-image asset-dark"
+                                    src="dist/images/header-illustration-dark.svg" alt="Header illustration">
+                            </div>
+                            <div class="hero-media-illustration">
+                                <img class="hero-media-illustration-image asset-light"
+                                    src="dist/images/hero-media-illustration-light.svg" alt="Hero media illustration">
+                                <img class="hero-media-illustration-image asset-dark"
+                                    src="dist/images/hero-media-illustration-dark.svg" alt="Hero media illustration">
+                            </div>
+                            <div class="hero-media-container">
+                                <img class="hero-media-image asset-light" src="dist/images/hero-media-light.svg"
+                                    alt="Hero media">
+                                <img class="hero-media-image asset-dark" src="dist/images/hero-media-dark.svg"
+                                    alt="Hero media">
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </header>
-        </div>
+            </section>
+
+            <section class="features section">
+                <div class="container">
+                    <div class="features-inner section-inner has-bottom-divider">
+                        <div class="features-header text-center" id="about">
+                            <div class="container-sm">
+                                <h2 class="section-title mt-0">About Us</h2>
+                                <p class="section-paragraph">Lorem ipsum is common placeholder text used to demonstrate
+                                    the graphic elements of a document or visual presentation.</p>
+                                <div class="features-image">
+                                    <img class="features-illustration asset-dark"
+                                        src="dist/images/features-illustration-dark.svg" alt="Feature illustration">
+                                    <img class="features-box asset-dark" src="dist/images/features-box-dark.svg"
+                                        alt="Feature box">
+                                    <img class="features-illustration asset-dark"
+                                        src="dist/images/features-illustration-top-dark.svg"
+                                        alt="Feature illustration top">
+                                    <img class="features-illustration asset-light"
+                                        src="dist/images/features-illustration-light.svg" alt="Feature illustration">
+                                    <img class="features-box asset-light" src="dist/images/features-box-light.svg"
+                                        alt="Feature box">
+                                    <img class="features-illustration asset-light"
+                                        src="dist/images/features-illustration-top-light.svg"
+                                        alt="Feature illustration top">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="features-wrap" id="products">
+                            <div class="feature is-revealing">
+                                <div class="feature-inner">
+                                    <div class="feature-icon">
+                                        <img class="asset-light" src="dist/images/feature-01-light.svg" alt="Pixell">
+                                        <img class="asset-dark" src="dist/images/feature-01-dark.svg" alt="Pixell">
+                                    </div>
+                                    <div class="feature-content">
+                                        <h3 class="feature-title mt-0">Pixell</h3>
+                                        <p class="text-sm mb-0">With Pixell, you can create and deploy websites and
+                                            servers in seconds. Get started for free or step up to a Pixell Pro
+                                            Instance.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="feature is-revealing">
+                                <div class="feature-inner">
+                                    <div class="feature-icon">
+                                        <img class="asset-light" src="dist/images/feature-02-light.svg" alt="Snowpackr">
+                                        <img class="asset-dark" src="dist/images/feature-02-dark.svg" alt="Snowpackr">
+                                    </div>
+                                    <div class="feature-content">
+                                        <h3 class="feature-title mt-0">Snowpackr (snow)</h3>
+                                        <p class="text-sm mb-0">Snowpackr is a package manager for the snow Registry &
+                                            the amber Product Index.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="feature is-revealing">
+                                <div class="feature-inner">
+                                    <div class="feature-icon">
+                                        <img class="asset-light" src="dist/images/feature-03-light.svg"
+                                            alt="Weaver Engine">
+                                        <img class="asset-dark" src="dist/images/feature-03-dark.svg"
+                                            alt="Weaver Engine">
+                                    </div>
+                                    <div class="feature-content">
+                                        <h3 class="feature-title mt-0">Weaver Engine</h3>
+                                        <p class="text-sm mb-0">Weaver Engine is a framework for creating video games
+                                            for the web. Weaver Engine supports 2D and 3D games.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="cta section">
+                <div class="container-sm">
+                    <div class="cta-inner section-inner">
+                        <div class="cta-header text-center">
+                            <h2 class="section-title mt-0">Switch to FiFly</h2>
+                            <p class="section-paragraph"></p>
+                            <div class="cta-cta">
+                                <a class="button button-primary" href="/onboarding/">Get Started</a>
+                                <a class="button button-primary" href="/login/">Login</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer has-top-divider">
+            <div class="container">
+                <div class="site-footer-inner">
+                    <div class="brand footer-brand">
+                        <a href="#">
+                            <img class="asset-light" src="dist/images/logo-light.svg" alt="Logo">
+                            <img class="asset-dark" src="dist/images/logo-dark.svg" alt="Logo">
+                        </a>
+                    </div>
+                    <ul class="footer-links list-reset">
+                        <li>
+                            <a href="#about">About us</a>
+                        </li>
+                        <li>
+                            <a href="mailto:support@fifly.org">Support/Contact</a>
+                        </li>
+                    </ul>
+                    <ul class="footer-social-links list-reset">
+                        <li>
+                            <a href="https://github.com/fifly-llc/">
+                                <span>GitHub</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="footer-copyright">&copy; 2023-present fifly.org. All rights reserved.</div>
+                </div>
+            </div>
+        </footer>
     </div>
+
+    <script src="dist/js/main.min.js"></script>
 </body>
 
 </html>
