@@ -8,6 +8,90 @@
     <title>FiFly</title>
     <link rel="stylesheet" href="dist/css/style.css">
     <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+
+    <style>
+        :root {
+            --glow-rgb: 239 42 201;
+        }
+
+        body {
+            background: linear-gradient(145deg, rgb(119, 46, 195), rgb(58, 18, 153));
+            height: 100vh;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .glow-point {
+            position: absolute;
+            box-shadow: 0rem 0rem 1.2rem 0.6rem rgb(var(--glow-rgb));
+            pointer-events: none;
+        }
+
+        .star {
+            position: absolute;
+            z-index: 2;
+            color: white;
+            font-size: 1rem;
+            animation-duration: 1500ms;
+            animation-fill-mode: forwards;
+            pointer-events: none;
+        }
+
+        @keyframes fall-1 {
+            0% {
+                transform: translate(0px, 0px) rotateX(45deg) rotateY(30deg) rotateZ(0deg) scale(0.25);
+                opacity: 0;
+            }
+
+            5% {
+                transform: translate(10px, -10px) rotateX(45deg) rotateY(30deg) rotateZ(0deg) scale(1);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translate(25px, 200px) rotateX(180deg) rotateY(270deg) rotateZ(90deg) scale(1);
+                opacity: 0;
+            }
+        }
+
+        @keyframes fall-2 {
+            0% {
+                transform: translate(0px, 0px) rotateX(-20deg) rotateY(10deg) scale(0.25);
+                opacity: 0;
+            }
+
+            10% {
+                transform: translate(-10px, -5px) rotateX(-20deg) rotateY(10deg) scale(1);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translate(-10px, 160px) rotateX(-90deg) rotateY(45deg) scale(0.25);
+                opacity: 0;
+            }
+        }
+
+        @keyframes fall-3 {
+            0% {
+                transform: translate(0px, 0px) rotateX(0deg) rotateY(45deg) scale(0.5);
+                opacity: 0;
+            }
+
+            15% {
+                transform: translate(7px, 5px) rotateX(0deg) rotateY(45deg) scale(1);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translate(20px, 120px) rotateX(-180deg) rotateY(-90deg) scale(0.5);
+                opacity: 0;
+            }
+        }
+    </style>
 </head>
 
 <body class="is-boxed has-animations">
@@ -18,8 +102,10 @@
                     <div class="brand header-brand">
                         <h1 class="m-0">
                             <a href="https://fifly.org">
-                                <img class="header-logo-image asset-light" src="dist/images/logo-light.svg" alt="Logo">
-                                <img class="header-logo-image asset-dark" src="dist/images/logo-dark.svg" alt="Logo">
+                                <img class="header-logo-image asset-light" src="dist/images/logo-light.svg" alt="Logo"
+                                    draggable="false">
+                                <img class="header-logo-image asset-dark" src="dist/images/logo-dark.svg" alt="Logo"
+                                    draggable="false">
                             </a>
                         </h1>
                     </div>
@@ -48,21 +134,25 @@
                         <div class="hero-media">
                             <div class="header-illustration">
                                 <img class="header-illustration-image asset-light"
-                                    src="dist/images/header-illustration-light.svg" alt="Header illustration">
+                                    src="dist/images/header-illustration-light.svg" alt="Header illustration"
+                                    draggable="false">
                                 <img class="header-illustration-image asset-dark"
-                                    src="dist/images/header-illustration-dark.svg" alt="Header illustration">
+                                    src="dist/images/header-illustration-dark.svg" alt="Header illustration"
+                                    draggable="false">
                             </div>
                             <div class="hero-media-illustration">
                                 <img class="hero-media-illustration-image asset-light"
-                                    src="dist/images/hero-media-illustration-light.svg" alt="Hero media illustration">
+                                    src="dist/images/hero-media-illustration-light.svg" alt="Hero media illustration"
+                                    draggable="false">
                                 <img class="hero-media-illustration-image asset-dark"
-                                    src="dist/images/hero-media-illustration-dark.svg" alt="Hero media illustration">
+                                    src="dist/images/hero-media-illustration-dark.svg" alt="Hero media illustration"
+                                    draggable="false">
                             </div>
                             <div class="hero-media-container">
                                 <img class="hero-media-image asset-light" src="dist/images/hero-media-light.svg"
-                                    alt="Hero media">
+                                    alt="Hero media" draggable="false">
                                 <img class="hero-media-image asset-dark" src="dist/images/hero-media-dark.svg"
-                                    alt="Hero media">
+                                    alt="Hero media" draggable="false">
                             </div>
                         </div>
                     </div>
@@ -75,22 +165,26 @@
                         <div class="features-header text-center" id="mission">
                             <div class="container-sm">
                                 <h2 class="section-title mt-0">Our Mission</h2>
-                                <p class="section-paragraph">Our Mission is to <span class="blue">accessablize</span> the <span class="green">internet</span>, making it <span class="yellow">globally</span> <span class="red">useful</span>.</p>
+                                <p class="section-paragraph">Our Mission is to <span class="blue">accessablize</span>
+                                    the <span class="green">internet</span>, making it <span
+                                        class="yellow">globally</span> <span class="red">useful</span>.</p>
                                 <div class="features-image">
                                     <img class="features-illustration asset-dark"
-                                        src="dist/images/features-illustration-dark.svg" alt="Feature illustration">
+                                        src="dist/images/features-illustration-dark.svg" alt="Feature illustration"
+                                        draggable="false">
                                     <img class="features-box asset-dark" src="dist/images/features-box-dark.svg"
-                                        alt="Feature box">
+                                        alt="Feature box" draggable="false">
                                     <img class="features-illustration asset-dark"
                                         src="dist/images/features-illustration-top-dark.svg"
-                                        alt="Feature illustration top">
+                                        alt="Feature illustration top" draggable="false">
                                     <img class="features-illustration asset-light"
-                                        src="dist/images/features-illustration-light.svg" alt="Feature illustration">
+                                        src="dist/images/features-illustration-light.svg" alt="Feature illustration"
+                                        draggable="false">
                                     <img class="features-box asset-light" src="dist/images/features-box-light.svg"
-                                        alt="Feature box">
+                                        alt="Feature box" draggable="false">
                                     <img class="features-illustration asset-light"
                                         src="dist/images/features-illustration-top-light.svg"
-                                        alt="Feature illustration top">
+                                        alt="Feature illustration top" draggable="false">
                                 </div>
                             </div>
                         </div>
@@ -98,8 +192,10 @@
                             <div class="feature is-revealing">
                                 <div class="feature-inner">
                                     <div class="feature-icon">
-                                        <img class="asset-light" src="dist/images/feature-01-light.svg" alt="Pixell">
-                                        <img class="asset-dark" src="dist/images/feature-01-dark.svg" alt="Pixell">
+                                        <img class="asset-light" src="dist/images/feature-01-light.svg" alt="Pixell"
+                                            draggable="false">
+                                        <img class="asset-dark" src="dist/images/feature-01-dark.svg" alt="Pixell"
+                                            draggable="false">
                                     </div>
                                     <div class="feature-content">
                                         <h3 class="feature-title mt-0">Pixell</h3>
@@ -112,8 +208,10 @@
                             <div class="feature is-revealing">
                                 <div class="feature-inner">
                                     <div class="feature-icon">
-                                        <img class="asset-light" src="dist/images/feature-02-light.svg" alt="Snowpackr">
-                                        <img class="asset-dark" src="dist/images/feature-02-dark.svg" alt="Snowpackr">
+                                        <img class="asset-light" src="dist/images/feature-02-light.svg" alt="Snowpackr"
+                                            draggable="false">
+                                        <img class="asset-dark" src="dist/images/feature-02-dark.svg" alt="Snowpackr"
+                                            draggable="false">
                                     </div>
                                     <div class="feature-content">
                                         <h3 class="feature-title mt-0">Snowpackr (snow)</h3>
@@ -126,9 +224,9 @@
                                 <div class="feature-inner">
                                     <div class="feature-icon">
                                         <img class="asset-light" src="dist/images/feature-03-light.svg"
-                                            alt="Weaver Engine">
+                                            alt="Weaver Engine" draggable="false">
                                         <img class="asset-dark" src="dist/images/feature-03-dark.svg"
-                                            alt="Weaver Engine">
+                                            alt="Weaver Engine" draggable="false">
                                     </div>
                                     <div class="feature-content">
                                         <h3 class="feature-title mt-0">Weaver Engine</h3>
@@ -140,12 +238,15 @@
                             <div class="feature is-revealing">
                                 <div class="feature-inner">
                                     <div class="feature-icon">
-                                        <img class="asset-light" src="dist/images/feature-01-light.svg" alt="Boxed">
-                                        <img class="asset-dark" src="dist/images/feature-01-dark.svg" alt="Boxed">
+                                        <img class="asset-light" src="dist/images/feature-01-light.svg" alt="Boxed"
+                                            draggable="false">
+                                        <img class="asset-dark" src="dist/images/feature-01-dark.svg" alt="Boxed"
+                                            draggable="false">
                                     </div>
                                     <div class="feature-content">
                                         <h3 class="feature-title mt-0">Boxed</h3>
-                                        <p class="text-sm mb-0">Boxed is an AI chatbot using the BXED family of models. It uses cutting-edge AI technology to provide insightful responses.</p>
+                                        <p class="text-sm mb-0">Boxed is an AI chatbot using the BXED family of models.
+                                            It uses cutting-edge AI technology to provide insightful responses.</p>
                                     </div>
                                 </div>
                             </div>
@@ -202,6 +303,141 @@
             </div>
         </footer>
     </div>
+
+    <script src="https://kit.fontawesome.com/1ee8f271b9.js"></script>
+
+    <script>
+        let start = new Date().getTime();
+
+        const originPosition = { x: 0, y: 0 };
+
+        const last = {
+            starTimestamp: start,
+            starPosition: originPosition,
+            mousePosition: originPosition
+        }
+
+        const config = {
+            starAnimationDuration: 1500,
+            minimumTimeBetweenStars: 150,
+            colors: ["20 184 166", "59 130 246"],
+            sizes: ["1.4rem", "1rem", "0.6rem"],
+            animations: ["fall-1", "fall-2", "fall-3"],
+            starCreationInterval: 250
+        }
+
+        let count = 0;
+
+        const rand = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min,
+            selectRandom = items => items[rand(0, items.length - 1)];
+
+        const withUnit = (value, unit) => `${value}${unit}`,
+            px = value => withUnit(value, "px"),
+            ms = value => withUnit(value, "ms");
+
+        const calcDistance = (a, b) => {
+            const diffX = b.x - a.x,
+                diffY = b.y - a.y;
+
+            return Math.sqrt(Math.pow(diffX, 2) + Math.pow(diffY, 2));
+        }
+
+        const calcElapsedTime = (start, end) => end - start;
+
+        const appendElement = element => document.body.appendChild(element),
+            removeElement = (element, delay) => setTimeout(() => document.body.removeChild(element), delay);
+
+        const createStar = position => {
+            const star = document.createElement("span"),
+                color = selectRandom(config.colors);
+
+            star.className = "star fa-solid fa-sparkle";
+
+            star.style.left = px(position.x);
+            star.style.top = px(position.y);
+            star.style.fontSize = selectRandom(config.sizes);
+            star.style.color = `rgb(${color})`;
+            star.style.textShadow = `0px 0px 1.5rem rgb(${color} / 0.5)`;
+            star.style.animationName = config.animations[count++ % 3];
+            star.style.starAnimationDuration = ms(config.starAnimationDuration);
+
+            appendElement(star);
+
+            removeElement(star, config.starAnimationDuration);
+        }
+
+        const createGlowPoint = position => {
+            const glow = document.createElement("div");
+
+            glow.className = "glow-point";
+
+            glow.style.left = px(position.x);
+            glow.style.top = px(position.y);
+
+            appendElement(glow)
+
+            removeElement(glow, config.glowDuration);
+        }
+
+        const determinePointQuantity = distance => Math.max(
+            Math.floor(distance / config.maximumGlowPointSpacing),
+            1
+        );
+
+        const updateLastStar = position => {
+            last.starTimestamp = new Date().getTime();
+
+            last.starPosition = position;
+        }
+
+        const updateLastMousePosition = position => last.mousePosition = position;
+
+        const adjustLastMousePosition = position => {
+            if (last.mousePosition.x === 0 && last.mousePosition.y === 0) {
+                last.mousePosition = position;
+            }
+        };
+
+        const handleOnMove = e => {
+            const mousePosition = { x: e.clientX, y: e.clientY }
+
+            adjustLastMousePosition(mousePosition);
+
+            const now = new Date().getTime(),
+                hasMovedFarEnough = calcDistance(last.starPosition, mousePosition) >= config.minimumDistanceBetweenStars,
+                hasBeenLongEnough = calcElapsedTime(last.starTimestamp, now) > config.minimumTimeBetweenStars;
+
+            const isClickableElement = e.target.tagName.toLowerCase() === 'button' || e.target.tagName.toLowerCase() === 'a' || e.target.tagName.toLowerCase() === 'input';
+
+            if ((hasMovedFarEnough || hasBeenLongEnough) && isClickableElement) {
+                createStar(mousePosition);
+
+                updateLastStar(mousePosition);
+            }
+
+            updateLastMousePosition(mousePosition);
+        }
+
+        const startStarCreationInterval = () => {
+            setInterval(() => {
+                let e = globalE;
+                const isClickableElement = e.target.tagName.toLowerCase() === 'button' || e.target.tagName.toLowerCase() === 'a';
+                if(isClickableElement) createStar(last.mousePosition);
+            }, config.starCreationInterval);
+        }
+
+        let globalE;
+
+        startStarCreationInterval();
+
+        window.addEventListener('mousemove', e => {
+            handleOnMove(e);
+            globalE = e;
+        });
+
+        window.addEventListener('touchmove', e => handleOnMove(e.touches[0]));
+        document.body.addEventListener('mouseleave', () => updateLastMousePosition(originPosition));
+    </script>
 
     <script src="dist/js/main.min.js"></script>
 </body>
